@@ -1,0 +1,444 @@
+/**
+ * AMIRO Barbershops Design System - Design Tokens
+ *
+ * This file contains all design tokens (CSS custom properties) that define
+ * the visual language of AMIRO Barbershops. All values are extracted from
+ * the live site to ensure exact visual fidelity.
+ *
+ * Source: https://www.amirobarbershops.com/
+ * Analyzed: October 28, 2025
+ */
+
+:root {
+  /* ============================================
+     BRAND COLORS
+     ============================================ */
+
+  /* Primary Background Colors */
+  --amiro-primary: #2F2F2F;           /* Main dark background */
+  --amiro-secondary: #2a2a2a;         /* Secondary dark sections, cards */
+  --amiro-accent: #968C8C;            /* Mauve accent/highlight color */
+
+  /* Text Colors */
+  --amiro-text-primary: #E2E0DF;      /* Primary light text on dark backgrounds */
+  --amiro-text-secondary: #d0d0d0;    /* Secondary light text, body copy */
+  --amiro-text-muted: #b2b0b0;        /* Muted/disabled text, placeholders */
+
+  /* Border Colors */
+  --amiro-border-dark: #474444;       /* Borders on dark backgrounds */
+  --amiro-border-light: #E2E0DF;      /* Light borders for contrast */
+
+  /* Utility Colors (for accents and interactive elements) */
+  --amiro-accent-blue: #1863DC;       /* Accent blue for links/actions */
+  --amiro-gray-medium: #858585;       /* Medium gray */
+  --amiro-gray-light: #D0D5D2;        /* Very light gray */
+  --amiro-gray-subtle: #acabab;       /* Subtle borders/shadows */
+  --amiro-off-white: #f4f4f4;         /* Off-white backgrounds */
+  --amiro-divider: #dedfe0;           /* Light dividers */
+
+  /* State Colors */
+  --amiro-hover: #968C8C;             /* Hover state color */
+  --amiro-focus: #E2E0DF;             /* Focus state color */
+  --amiro-active: #2F2F2F;            /* Active state color */
+
+  /* Opacity Variations */
+  --amiro-shadow-light: rgba(0, 0, 0, 0.2);
+  --amiro-shadow-medium: rgba(0, 0, 0, 0.3);
+  --amiro-shadow-deep: rgba(0, 0, 0, 0.4);
+  --amiro-border-shadow: rgba(172, 171, 171, 0.3);
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+
+  /* Font Families */
+  --amiro-font-brand: "bicyclette", sans-serif;      /* Primary brand font - headings */
+  --amiro-font-body: "Montserrat", sans-serif;       /* Body text, navigation, buttons */
+  --amiro-font-mono: "IBM Plex Mono", monospace;     /* Monospace for special elements */
+
+  /* Fallback Font Stack */
+  --amiro-font-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+
+  /* Font Sizes - Base (16px) */
+  --amiro-font-size-xs: 12px;         /* Small UI elements, disclaimers */
+  --amiro-font-size-sm: 13px;         /* Small text */
+  --amiro-font-size-base: 16px;       /* Body text (base) */
+  --amiro-font-size-md: 18px;         /* Large body text, subheadings */
+  --amiro-font-size-lg: 20px;         /* Medium headings */
+  --amiro-font-size-xl: 24px;         /* Section subheadings */
+  --amiro-font-size-2xl: 36px;        /* Large headings */
+  --amiro-font-size-3xl: 42px;        /* Extra large headings */
+
+  /* Responsive Font Sizes (using clamp for fluid typography) */
+  --amiro-font-size-hero: clamp(48px, 8vw, 96px);    /* Hero headings */
+  --amiro-font-size-display: clamp(60px, 10vw, 120px); /* Display text */
+
+  /* Font Weights */
+  --amiro-font-weight-light: 300;     /* Light weight */
+  --amiro-font-weight-normal: 400;    /* Normal weight */
+  --amiro-font-weight-medium: 500;    /* Medium weight */
+  --amiro-font-weight-semibold: 600;  /* Semi-bold weight */
+  --amiro-font-weight-bold: 700;      /* Bold weight */
+
+  /* Line Heights */
+  --amiro-line-height-tight: 1.0;     /* Tight line height for headings */
+  --amiro-line-height-heading: 1.1;   /* Heading line height */
+  --amiro-line-height-body: 1.6;      /* Body text line height */
+  --amiro-line-height-relaxed: 1.8;   /* Relaxed line height */
+
+  /* Specific Line Heights (from spec) */
+  --amiro-line-height-16: 16px;       /* Specific heading line height */
+  --amiro-line-height-24: 24px;       /* Specific body line height */
+
+  /* Letter Spacing */
+  --amiro-letter-spacing-tight: -0.02em;
+  --amiro-letter-spacing-normal: 0;
+  --amiro-letter-spacing-wide: 0.05em;
+
+  /* ============================================
+     SPACING SYSTEM
+     ============================================ */
+
+  /* WordPress-inspired spacing scale (based on AMIRO's actual values) */
+  --amiro-space-xs: 8px;              /* Extra small spacing */
+  --amiro-space-sm: 12px;             /* Small spacing */
+  --amiro-space-md: 16px;             /* Medium spacing (base) */
+  --amiro-space-lg: 24px;             /* Large spacing */
+  --amiro-space-xl: 32px;             /* Extra large spacing */
+  --amiro-space-2xl: 48px;            /* 2X large spacing */
+  --amiro-space-3xl: 64px;            /* 3X large spacing */
+
+  /* WordPress Preset Spacing (from spec) */
+  --wp--preset--spacing--20: 0.44rem; /* ~7px */
+  --wp--preset--spacing--30: 0.67rem; /* ~11px */
+  --wp--preset--spacing--40: 1rem;    /* 16px */
+  --wp--preset--spacing--50: 1.5rem;  /* 24px */
+  --wp--preset--spacing--60: 2.25rem; /* 36px */
+  --wp--preset--spacing--70: 3.38rem; /* ~54px */
+  --wp--preset--spacing--80: 5.06rem; /* ~81px */
+
+  /* Block Gap (spacing between elements) */
+  --wp--style--block-gap: 24px;
+
+  /* ============================================
+     LAYOUT SYSTEM
+     ============================================ */
+
+  /* Container Widths */
+  --amiro-content-width: 800px;       /* Content max-width */
+  --amiro-wide-width: 1200px;         /* Wide content max-width */
+  --amiro-container-max: 1400px;      /* Maximum container width */
+
+  /* Container Padding */
+  --amiro-container-padding-mobile: 15px;  /* Mobile horizontal padding */
+  --amiro-container-padding-tablet: 22px;  /* Tablet horizontal padding */
+  --amiro-container-padding-desktop: 24px; /* Desktop horizontal padding */
+
+  /* Grid Gaps */
+  --amiro-grid-gap: 24px;             /* Default grid gap */
+  --amiro-grid-gap-mobile: 16px;      /* Mobile grid gap */
+
+  /* ============================================
+     BUTTON STYLES
+     ============================================ */
+
+  /* Button Padding */
+  --amiro-button-padding-default: calc(0.667em + 2px) calc(1.333em + 2px);
+  --amiro-button-padding-small: 10px 16px;
+  --amiro-button-padding-medium: 16px 24px;
+  --amiro-button-padding-large: 20px 26px;
+  --amiro-button-padding-custom: 22px 24px;
+
+  /* Button Border */
+  --amiro-button-border-width: 2px;
+  --amiro-button-border-radius: 50px;  /* Pill-shaped buttons */
+
+  /* Button Colors */
+  --amiro-button-bg: #2F2F2F;
+  --amiro-button-text: #E2E0DF;
+  --amiro-button-border: #2F2F2F;
+
+  --amiro-button-accent-bg: #968C8C;
+  --amiro-button-accent-text: #E2E0DF;
+  --amiro-button-accent-border: #968C8C;
+
+  /* ============================================
+     BORDER RADIUS
+     ============================================ */
+
+  --amiro-radius-none: 0px;
+  --amiro-radius-small: 2px;
+  --amiro-radius-medium: 4px;         /* Default card/component radius */
+  --amiro-radius-large: 6px;
+  --amiro-radius-pill: 50px;          /* Pill-shaped elements (buttons) */
+  --amiro-radius-circle: 50%;         /* Circular elements (icons, avatars) */
+
+  /* ============================================
+     SHADOWS & ELEVATION
+     ============================================ */
+
+  /* WordPress Shadow Presets */
+  --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+  --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+  --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+  --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+
+  /* AMIRO Custom Shadows */
+  --amiro-shadow-card: 0 32px 68px rgba(0, 0, 0, 0.3);        /* Card hover shadow */
+  --amiro-shadow-nav: 0 -1px 10px 0 rgba(172, 171, 171, 0.3); /* Navigation shadow */
+  --amiro-shadow-button: 0 4px 12px rgba(0, 0, 0, 0.2);       /* Button hover shadow */
+
+  /* Elevation Levels */
+  --amiro-shadow-none: none;
+  --amiro-shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --amiro-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --amiro-shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.25);
+  --amiro-shadow-floating: 0 32px 68px rgba(0, 0, 0, 0.3);
+
+  /* ============================================
+     TRANSITIONS & ANIMATIONS
+     ============================================ */
+
+  /* Transition Speeds */
+  --amiro-transition-fast: 0.2s ease-in-out;    /* Fast transitions (icons, small UI) */
+  --amiro-transition-normal: 0.4s ease;         /* Normal transitions (buttons, cards) */
+  --amiro-transition-slow: 1s ease;             /* Slow transitions (large animations) */
+  --amiro-transition-instant: 0s ease;          /* Instant (no transition) */
+
+  /* Easing Functions */
+  --amiro-easing-default: ease;
+  --amiro-easing-in: ease-in;
+  --amiro-easing-out: ease-out;
+  --amiro-easing-in-out: ease-in-out;
+  --amiro-easing-cubic: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Slideshow Durations (for hero backgrounds) */
+  --amiro-slideshow-duration: 5000ms;
+  --amiro-slideshow-transition: 1000ms;
+
+  /* ============================================
+     RESPONSIVE BREAKPOINTS
+     ============================================ */
+
+  /* Breakpoint values (for reference in JS or media queries) */
+  --amiro-breakpoint-xs: 352px;       /* Extra small mobile */
+  --amiro-breakpoint-sm: 425px;       /* Small mobile */
+  --amiro-breakpoint-mobile: 440px;   /* Mobile */
+  --amiro-breakpoint-md: 576px;       /* Large mobile */
+  --amiro-breakpoint-tablet: 768px;   /* Tablet */
+  --amiro-breakpoint-lg: 845px;       /* Large tablet */
+  --amiro-breakpoint-desktop: 1024px; /* Small desktop */
+  --amiro-breakpoint-xl: 1440px;      /* Large desktop */
+
+  /* ============================================
+     Z-INDEX LAYERS
+     ============================================ */
+
+  --amiro-z-base: 0;
+  --amiro-z-dropdown: 10;
+  --amiro-z-sticky: 20;
+  --amiro-z-fixed: 30;
+  --amiro-z-modal-backdrop: 40;
+  --amiro-z-modal: 50;
+  --amiro-z-popover: 60;
+  --amiro-z-tooltip: 70;
+  --amiro-z-nav: 1000;                /* Navigation z-index */
+
+  /* ============================================
+     ASPECT RATIOS
+     ============================================ */
+
+  /* WordPress Aspect Ratio Presets */
+  --wp--preset--aspect-ratio--square: 1;
+  --wp--preset--aspect-ratio--4-3: 4/3;
+  --wp--preset--aspect-ratio--3-4: 3/4;
+  --wp--preset--aspect-ratio--3-2: 3/2;
+  --wp--preset--aspect-ratio--2-3: 2/3;
+  --wp--preset--aspect-ratio--16-9: 16/9;
+  --wp--preset--aspect-ratio--9-16: 9/16;
+
+  /* ============================================
+     FORM ELEMENTS
+     ============================================ */
+
+  /* Input Padding */
+  --amiro-input-padding: 12px 16px;
+
+  /* Input Colors */
+  --amiro-input-bg: #2a2a2a;
+  --amiro-input-border: #474444;
+  --amiro-input-text: #E2E0DF;
+  --amiro-input-placeholder: #b2b0b0;
+  --amiro-input-focus-border: #968C8C;
+  --amiro-input-focus-shadow: 0 0 0 3px rgba(150, 140, 140, 0.1);
+
+  /* Checkbox/Radio */
+  --amiro-checkbox-size: 20px;
+  --amiro-checkbox-accent: #968C8C;
+
+  /* ============================================
+     COMPONENT SPECIFIC
+     ============================================ */
+
+  /* Navigation */
+  --amiro-nav-padding: 12px 24px;
+  --amiro-nav-sticky-offset: 0;
+
+  /* Hero Section */
+  --amiro-hero-min-height: 100vh;
+  --amiro-hero-min-height-with-nav: calc(100vh - 80px);
+
+  /* Cards */
+  --amiro-card-bg: #2a2a2a;
+  --amiro-card-border: #474444;
+  --amiro-card-padding: 22px 24px;
+  --amiro-card-radius: 4px;
+  --amiro-card-hover-lift: -8px;
+
+  /* Icons */
+  --amiro-icon-size-sm: 1em;
+  --amiro-icon-size-md: 20px;
+  --amiro-icon-size-lg: 40px;
+  --amiro-icon-spacing: 8px;
+
+  /* Social Icons */
+  --amiro-social-icon-size: 40px;
+  --amiro-social-icon-inner: 20px;
+
+  /* ============================================
+     ACCESSIBILITY
+     ============================================ */
+
+  /* Focus Ring */
+  --amiro-focus-ring-width: 2px;
+  --amiro-focus-ring-offset: 2px;
+  --amiro-focus-ring-color: #968C8C;
+
+  /* Focus Ring for Buttons */
+  --amiro-focus-ring-offset-button: 4px;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Tablet and above (768px+) */
+@media (min-width: 768px) {
+  :root {
+    /* Adjust font sizes for tablet */
+    --amiro-font-size-hero: clamp(60px, 8vw, 100px);
+    --amiro-font-size-display: clamp(80px, 10vw, 140px);
+
+    /* Adjust container padding */
+    --amiro-container-padding: var(--amiro-container-padding-tablet);
+
+    /* Adjust grid gaps */
+    --amiro-grid-gap: 32px;
+  }
+}
+
+/* Desktop and above (1024px+) */
+@media (min-width: 1024px) {
+  :root {
+    /* Adjust font sizes for desktop */
+    --amiro-font-size-hero: clamp(72px, 8vw, 120px);
+    --amiro-font-size-display: clamp(100px, 10vw, 180px);
+
+    /* Adjust container padding */
+    --amiro-container-padding: var(--amiro-container-padding-desktop);
+
+    /* Adjust grid gaps */
+    --amiro-grid-gap: 48px;
+  }
+}
+
+/* Large desktop and above (1440px+) */
+@media (min-width: 1440px) {
+  :root {
+    /* Adjust font sizes for large desktop */
+    --amiro-font-size-display: clamp(120px, 10vw, 200px);
+  }
+}
+
+/* ============================================
+   UTILITY TOKENS
+   ============================================ */
+
+/* WordPress Color Presets (for compatibility) */
+:root {
+  --wp--preset--color--black: #000000;
+  --wp--preset--color--white: #ffffff;
+  --wp--preset--color--cyan-bluish-gray: #abb8c3;
+  --wp--preset--color--pale-pink: #f78da7;
+  --wp--preset--color--vivid-red: #cf2e2e;
+  --wp--preset--color--luminous-vivid-orange: #ff6900;
+  --wp--preset--color--luminous-vivid-amber: #fcb900;
+  --wp--preset--color--light-green-cyan: #7bdcb5;
+  --wp--preset--color--vivid-green-cyan: #00d084;
+  --wp--preset--color--pale-cyan-blue: #8ed1fc;
+  --wp--preset--color--vivid-cyan-blue: #0693e3;
+  --wp--preset--color--vivid-purple: #9b51e0;
+}
+
+/* WordPress Gradient Presets (for compatibility) */
+:root {
+  --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6,147,227,1) 0%, rgb(155,81,224) 100%);
+  --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122,220,180) 0%, rgb(0,208,130) 100%);
+  --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252,185,0,1) 0%, rgba(255,105,0,1) 100%);
+  --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74,234,220) 0%, rgb(151,120,209) 20%, rgb(207,42,186) 40%, rgb(238,44,130) 60%, rgb(251,105,98) 80%, rgb(254,248,76) 100%);
+}
+
+/* WordPress Content Sizing */
+:root {
+  --wp--style--global--content-size: 800px;
+  --wp--style--global--wide-size: 1200px;
+}
+
+/* ============================================
+   MOTION EFFECTS (Elementor-compatible)
+   ============================================ */
+
+:root {
+  /* Parallax Settings */
+  --motion-fx-translateX-speed: 4px;
+  --motion-fx-translateX-direction: negative; /* or normal */
+  --motion-fx-translateX-range-start: 0%;
+  --motion-fx-translateX-range-end: 100%;
+
+  /* Ken Burns Effect (Hero slideshow) */
+  --ken-burns-enabled: true;
+  --slideshow-effect: fade;
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+:root {
+  /* Image Lazy Loading */
+  --contain-intrinsic-size: 3000px 1500px;
+
+  /* Font Loading Strategy */
+  --font-display: swap; /* Use swap for all fonts except brand font (auto) */
+}
+
+/**
+ * END OF DESIGN TOKENS
+ *
+ * Usage:
+ * - All components should reference these tokens instead of hardcoded values
+ * - Use semantic token names (e.g., var(--amiro-text-primary)) not raw colors
+ * - Maintain consistency by always using the spacing scale
+ * - Follow the typography system for all text elements
+ * - Use transition tokens for all animations
+ *
+ * Example:
+ * .button {
+ *   background-color: var(--amiro-button-bg);
+ *   color: var(--amiro-button-text);
+ *   border-radius: var(--amiro-button-border-radius);
+ *   padding: var(--amiro-button-padding-default);
+ *   transition: all var(--amiro-transition-normal);
+ * }
+ */

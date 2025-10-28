@@ -1,0 +1,79 @@
+---
+interface Props {
+  heading: string;
+  text: string;
+}
+
+const { heading, text } = Astro.props;
+---
+
+<div class="about-content-card">
+  <div class="card-left">
+    <h3 class="card-heading">{heading}</h3>
+  </div>
+  <div class="card-right">
+    <p class="card-text">{text}</p>
+  </div>
+</div>
+
+<style>
+  .about-content-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 3rem 0;
+    border-top: 3px solid #1a1a1a;
+  }
+
+  .about-content-card:last-child {
+    border-bottom: 3px solid #1a1a1a;
+  }
+
+  .card-left {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .card-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 3vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .card-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-content-card {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 2rem 0;
+    }
+
+    .card-heading {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    .card-text {
+      font-size: 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,208 @@
+/* AMIRO Hero Section - Global Styles & Utilities */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@300;400;600&display=swap');
+
+/* Global Hero Variables */
+:root {
+  --hero-dark-bg: #2c2c2c;
+  --hero-darker-bg: #1a1a1a;
+  --hero-text-white: #ffffff;
+  --hero-accent-cream: #f5f5dc;
+  --hero-button-text: #1a1a1a;
+}
+
+/* Performance Optimization */
+.amiro-hero,
+.hero-images,
+.marquee-content {
+  will-change: transform;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero Section Container Utilities */
+.hero-full-height {
+  height: 100vh;
+  min-height: 600px;
+}
+
+/* Backdrop Blur Utilities */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(10px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(20px);
+}
+
+/* Animation Utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus Styles for Accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--hero-accent-cream);
+  outline-offset: 2px;
+}
+
+/* Loading State for Hero Image */
+.hero-background.loading {
+  background-color: var(--hero-darker-bg);
+}
+
+.hero-background.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .hero-responsive-text {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .amiro-hero {
+    height: auto;
+    min-height: 0;
+  }
+
+  .diagonal-beams,
+  .marquee-container,
+  .corner-elements {
+    display: none;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .marquee-content {
+    animation: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .cta-button,
+  .cta-box-link {
+    border-width: 2px;
+  }
+}
+
+/* Dark Mode Support (if needed) */
+@media (prefers-color-scheme: dark) {
+  /* Already dark by default */
+}
+
+/* Custom Scrollbar for Hero Section */
+.amiro-hero::-webkit-scrollbar {
+  width: 8px;
+}
+
+.amiro-hero::-webkit-scrollbar-track {
+  background: var(--hero-darker-bg);
+}
+
+.amiro-hero::-webkit-scrollbar-thumb {
+  background: var(--hero-accent-cream);
+  border-radius: 4px;
+}
+
+.amiro-hero::-webkit-scrollbar-thumb:hover {
+  background: #e8e8cc;
+}

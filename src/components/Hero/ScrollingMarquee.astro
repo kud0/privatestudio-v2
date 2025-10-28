@@ -1,0 +1,104 @@
+---
+// Scroll-triggered Marquee Component
+---
+
+<div class="marquee-container" id="hero-marquee">
+  <div class="marquee-content">
+    <span class="marquee-text">PRIVATESTUDIO</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">BARBERSHOP</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">PRIVATESTUDIO</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">BARBERSHOP</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">PRIVATESTUDIO</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">BARBERSHOP</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">PRIVATESTUDIO</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">BARBERSHOP</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">PRIVATESTUDIO</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">BARBERSHOP</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">PRIVATESTUDIO</span>
+    <span class="marquee-separator">|</span>
+    <span class="marquee-text">BARBERSHOP</span>
+    <span class="marquee-separator">|</span>
+  </div>
+</div>
+
+<style>
+  .marquee-container {
+    position: fixed;
+    top: 55vh;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 1rem 0;
+    z-index: 50;
+  }
+
+  .marquee-content {
+    display: inline-flex;
+    will-change: transform;
+  }
+
+  .marquee-text {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: #000000;
+    padding: 0 2rem;
+  }
+
+  .marquee-separator {
+    display: inline-block;
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .marquee-container {
+      padding: 0.75rem 0;
+    }
+
+    .marquee-text {
+      font-size: 1rem;
+      padding: 0 1.5rem;
+    }
+
+    .marquee-separator {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  // Scroll-triggered horizontal movement
+  let lastScrollY = 0;
+  let currentX = 0;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const delta = scrollY - lastScrollY;
+
+    currentX -= delta * 0.5; // Move based on scroll delta
+
+    const marqueeContent = document.querySelector('#hero-marquee .marquee-content') as HTMLElement;
+    if (marqueeContent) {
+      marqueeContent.style.transform = `translateX(${currentX}px)`;
+    }
+
+    lastScrollY = scrollY;
+  });
+</script>

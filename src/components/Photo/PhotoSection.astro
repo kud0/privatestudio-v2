@@ -1,0 +1,47 @@
+---
+// Plain photo section
+interface Props {
+  imageUrl?: string;
+  alt?: string;
+}
+
+const {
+  imageUrl = "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1600&h=900&fit=crop",
+  alt = "PrivateStudio Barbershop Interior"
+} = Astro.props;
+---
+
+<section class="photo-section">
+  <div class="photo-container">
+    <img src={imageUrl} alt={alt} loading="lazy" />
+  </div>
+</section>
+
+<style>
+  .photo-section {
+    position: relative;
+    width: 100%;
+    background-color: #5a5a5a;
+    padding: 0 5rem 4rem;
+  }
+
+  .photo-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .photo-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .photo-section {
+      padding: 3rem 1.5rem;
+    }
+  }
+</style>

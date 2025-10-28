@@ -1,0 +1,141 @@
+---
+// Horizontal Scroll Component - AMIRO Style
+---
+
+<section class="horizontal-scroll-section">
+  <div class="horizontal-scroll-wrapper">
+    <div class="horizontal-text">
+      <span class="text-item">WE DON'T DO NORMAL</span>
+      <span class="separator">•</span>
+      <span class="text-item">WE DON'T DO NORMAL</span>
+      <span class="separator">•</span>
+      <span class="text-item">WE DON'T DO NORMAL</span>
+      <span class="separator">•</span>
+      <span class="text-item">WE DON'T DO NORMAL</span>
+      <span class="separator">•</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Wait for DOM to be ready
+  document.addEventListener('DOMContentLoaded', () => {
+    const horizontalText = document.querySelector('.horizontal-text');
+
+    if (horizontalText) {
+      // Calculate the width for seamless loop
+      const textWidth = horizontalText.scrollWidth / 2;
+
+      // Horizontal scroll animation
+      gsap.to('.horizontal-text', {
+        x: `-${textWidth}px`,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.horizontal-scroll-section',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+
+      // Add continuous loop animation when not scrolling
+      gsap.to('.horizontal-text', {
+        x: `-${textWidth}px`,
+        duration: 20,
+        repeat: -1,
+        ease: 'none',
+        modifiers: {
+          x: gsap.utils.unitize(x => parseFloat(x) % textWidth)
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  .horizontal-scroll-section {
+    position: relative;
+    height: 200px;
+    background: var(--color-bg-black);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .horizontal-scroll-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .horizontal-text {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    white-space: nowrap;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .text-item {
+    font-size: clamp(36px, 8vw, 80px);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--color-text-primary);
+    opacity: 0.5;
+    transition: opacity var(--transition-base);
+    font-family: var(--font-display);
+  }
+
+  .separator {
+    font-size: clamp(24px, 6vw, 48px);
+    color: var(--color-accent-bronze);
+    opacity: 0.7;
+  }
+
+  /* Hover effect */
+  .horizontal-scroll-section:hover .text-item {
+    opacity: 0.8;
+  }
+
+  /* Performance optimizations */
+  @media (prefers-reduced-motion: reduce) {
+    .horizontal-text {
+      animation: none;
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) {
+    .horizontal-scroll-section {
+      height: 250px;
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .horizontal-scroll-section {
+      height: 300px;
+    }
+
+    .horizontal-text {
+      gap: var(--spacing-2xl);
+    }
+  }
+
+  /* Large desktop */
+  @media (min-width: 1440px) {
+    .horizontal-scroll-section {
+      height: 350px;
+    }
+  }
+</style>

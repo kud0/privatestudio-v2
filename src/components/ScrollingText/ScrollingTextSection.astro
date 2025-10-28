@@ -1,0 +1,185 @@
+---
+// Dual scrolling text lines triggered by scroll (opposite directions)
+---
+
+<section class="scrolling-text-section" id="dual-scroll-text">
+  <!-- First line - moves left when scrolling down -->
+  <div class="text-line-wrapper" id="line-left">
+    <div class="text-line">
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+    </div>
+  </div>
+
+  <!-- Second line - moves right when scrolling down -->
+  <div class="text-line-wrapper" id="line-right">
+    <div class="text-line">
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+      <span class="text-content">KEEP YOUR HEAD UP</span>
+      <span class="separator">|</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrolling-text-section {
+    position: relative;
+    width: 100%;
+    background-color: #5a5a5a;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .text-line-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #5a5a5a;
+    padding: 0rem 0;
+  }
+
+  .text-line {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  .text-content {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    padding: 0 3rem;
+  }
+
+  .separator {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .text-content {
+      font-size: 1.5rem;
+      padding: 0 2rem;
+    }
+
+    .separator {
+      font-size: 1.5rem;
+    }
+
+    .text-line {
+      padding: 1rem 0;
+    }
+  }
+</style>
+
+<script>
+  // Scroll-triggered movement in opposite directions - infinite effect
+  let lastScrollY = 2000;
+  let leftX = -800; // Start offset to fill left edge
+  let rightX = -300; // Start offset to fill left edge
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const delta = scrollY - lastScrollY;
+
+    // First line moves left (negative direction)
+    leftX -= delta * 0.5;
+
+    // Second line moves right (positive direction)
+    rightX += delta * 0.5;
+
+    const lineLeft = document.querySelector('#line-left .text-line') as HTMLElement;
+    const lineRight = document.querySelector('#line-right .text-line') as HTMLElement;
+
+    if (lineLeft) {
+      lineLeft.style.transform = `translateX(${leftX}px)`;
+    }
+
+    if (lineRight) {
+      lineRight.style.transform = `translateX(${rightX}px)`;
+    }
+
+    lastScrollY = scrollY;
+  });
+
+  // Initialize both lines position for infinite effect with no gaps
+  window.addEventListener('DOMContentLoaded', () => {
+    const lineLeft = document.querySelector('#line-left .text-line') as HTMLElement;
+    const lineRight = document.querySelector('#line-right .text-line') as HTMLElement;
+
+    if (lineLeft) {
+      lineLeft.style.transform = `translateX(${leftX}px)`;
+    }
+
+    if (lineRight) {
+      lineRight.style.transform = `translateX(${rightX}px)`;
+    }
+  });
+</script>

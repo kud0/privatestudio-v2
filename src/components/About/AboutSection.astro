@@ -1,0 +1,95 @@
+---
+import AboutContentCard from './AboutContentCard.astro';
+
+const aboutCards = [
+  {
+    heading: "A DREAM BORN FROM FRIENDSHIP",
+    text: "At AMIRO Barbershop, it all starts with friendship. Over 20 years ago, two kids, Andrea Amighetti and Luca Rossi, sat next to each other in a classroom, unknowingly sharing a dream. What began as a simple bond grew into something more a lifelong passion for the art of barbering. After years of living in different countries and following our separate paths, we reunited to bring that dream to life in the heart of Zürich. AMIRO Barbershop was born from more than just skill, it's a product of two friends coming together to create something meaningful."
+  },
+  {
+    heading: "WHEN YOU FEEL GOOD, YOU DON'T LOOK GOOD!",
+    text: "AMIRO Barbershop represents the boldness and creativity that only years of friendship can bring. Whether you're preparing for a special event or just want to turn heads walking through the city, our cuts are designed to give you confidence and style."
+  },
+  {
+    heading: "BUILT ON FRIENDSHIP, CRAFTED WITH CARE.",
+    text: "We believe every haircut should be as unique as the person wearing it. That's why every trim, shave, and style we deliver is crafted with precision and tailored to your individual taste. When you visit *AMIRO*, you're not just getting a haircut, you're stepping into a place where passion and dedication come together in every detail."
+  },
+  {
+    heading: "A PLACE WHERE FRIENDSHIP, CRAFTSMANSHIP, AND STYLE MEET",
+    text: "Conveniently located at Ankerstrasse 124, 8004 Zürich, AMIRO Barbershop is your destination for a fresh look that blends tradition with contemporary trends. Whether you're after a timeless classic or a bold, modern style, we've got you covered. Come by, experience our story, and leave with more than just a great haircut. At AMIRO Barbershop, you'll find a place where friendship, craftsmanship, and style meet."
+  }
+];
+---
+
+<section class="about-section">
+  <!-- Large "about" text positioned on top of previous photo -->
+  <div class="about-heading-wrapper">
+    <h2 class="about-heading">about</h2>
+  </div>
+
+  <!-- Content cards -->
+  <div class="about-content-wrapper">
+    {aboutCards.map((card) => (
+      <AboutContentCard
+        heading={card.heading}
+        text={card.text}
+      />
+    ))}
+  </div>
+</section>
+
+<style>
+  .about-section {
+    position: relative;
+    width: 100%;
+    background-color: #5a5a5a;
+    padding-bottom: 6rem;
+    margin-top: -4em;
+  }
+
+  /* "about" heading positioned to overlay the photo above */
+  .about-heading-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 5rem;
+    z-index: 20;
+  }
+
+  .about-heading {
+    font-family: 'Bicyclette', 'Bebas Neue', sans-serif;
+    font-size: clamp(120px, 20vw, 280px);
+    font-weight: 700;
+    line-height: 0.8;
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  /* Content cards wrapper */
+  .about-content-wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem 5rem 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-section {
+      margin-top: -8rem;
+    }
+
+    .about-heading-wrapper {
+      padding: 0 1.5rem;
+    }
+
+    .about-heading {
+      font-size: clamp(80px, 18vw, 120px);
+    }
+
+    .about-content-wrapper {
+      padding: 2rem 1.5rem 0;
+    }
+  }
+</style>
