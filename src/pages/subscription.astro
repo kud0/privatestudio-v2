@@ -1,0 +1,433 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopNavigation from '../components/Hero/TopNavigation.astro';
+import Footer from '../components/Footer/Footer.astro';
+---
+
+<BaseLayout title="Subscription - PrivateStudio Barbershop">
+  <TopNavigation />
+
+  <section class="subscription-hero">
+    <div class="subscription-container">
+      <!-- Large Heading -->
+      <div class="subscription-heading">
+        <h1>plan</h1>
+      </div>
+
+      <!-- Plan Card -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <div class="plan-badge">MONTHLY PLAN</div>
+          <h2 class="plan-name">UNLIMITED STYLE</h2>
+        </div>
+
+        <div class="plan-content">
+          <div class="plan-left">
+            <div class="price-section">
+              <span class="price">100€</span>
+              <span class="price-period">/month</span>
+            </div>
+            <p class="plan-description">
+              Get 4 premium haircuts every month. Never worry about booking or paying again.
+            </p>
+          </div>
+
+          <div class="plan-divider"></div>
+
+          <div class="plan-right">
+            <h3 class="features-heading">WHAT'S INCLUDED</h3>
+            <ul class="features-list">
+              <li>4 Premium Haircuts per Month</li>
+              <li>Priority Booking Access</li>
+              <li>No Appointment Fees</li>
+              <li>Flexible Scheduling</li>
+              <li>Cancel Anytime</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="plan-footer">
+          <a href="#subscribe" class="subscribe-button">SUBSCRIBE NOW &gt;</a>
+          <p class="plan-note">First month starts immediately. Auto-renews monthly.</p>
+        </div>
+      </div>
+
+      <!-- Benefits Section -->
+      <div class="benefits-section">
+        <div class="benefit-card">
+          <h3>SAVE MONEY</h3>
+          <p>Regular haircuts cost 30€ each. With our subscription, you save 20€ per month.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>PRIORITY ACCESS</h3>
+          <p>Skip the queue with priority booking. Always get your preferred time slot.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>NO HASSLE</h3>
+          <p>One payment, four cuts. No more thinking about payments at each visit.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="faq-section">
+        <h2 class="faq-heading">FREQUENTLY ASKED</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>Can I cancel anytime?</h4>
+            <p>Yes, cancel anytime before your next billing date. No hidden fees or commitments.</p>
+          </div>
+          <div class="faq-item">
+            <h4>What if I don't use all 4 cuts?</h4>
+            <p>Unused cuts don't roll over to the next month. Make the most of your subscription!</p>
+          </div>
+          <div class="faq-item">
+            <h4>Can I share my subscription?</h4>
+            <p>Subscriptions are personal and non-transferable. Each member needs their own plan.</p>
+          </div>
+          <div class="faq-item">
+            <h4>How do I book with my subscription?</h4>
+            <p>Book online as usual. Your subscription will be automatically applied at checkout.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .subscription-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #5a5a5a;
+    padding: 8rem 0 6rem;
+  }
+
+  .subscription-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
+
+  /* Large Heading */
+  .subscription-heading {
+    margin-bottom: 4rem;
+  }
+
+  .subscription-heading h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(120px, 20vw, 280px);
+    font-weight: 700;
+    line-height: 0.8;
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  /* Plan Card */
+  .plan-card {
+    background-color: #FDFDFD;
+    border: 2.5px solid #1a1a1a;
+    padding: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .plan-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2.5px solid #1a1a1a;
+  }
+
+  .plan-badge {
+    padding: 0.5rem 1.5rem;
+    background-color: #1a1a1a;
+    color: #FDFDFD;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+  }
+
+  .plan-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  .plan-content {
+    display: grid;
+    grid-template-columns: 1fr 2.5px 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .plan-divider {
+    background-color: #1a1a1a;
+    width: 2.5px;
+  }
+
+  .plan-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .price-section {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .price {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1;
+  }
+
+  .price-period {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #5a5a5a;
+  }
+
+  .plan-description {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  .plan-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .features-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .features-list li {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.125rem;
+    color: #1a1a1a;
+    padding-left: 2rem;
+    position: relative;
+  }
+
+  .features-list li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+
+  .plan-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    border-top: 2.5px solid #1a1a1a;
+  }
+
+  .subscribe-button {
+    padding: 1rem 4rem;
+    border-radius: 50px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2.5px solid #1a1a1a;
+    color: #FDFDFD;
+    background-color: #1a1a1a;
+  }
+
+  .subscribe-button:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .plan-note {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.875rem;
+    color: #5a5a5a;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* Benefits Section */
+  .benefits-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .benefit-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2.5px solid #1a1a1a;
+    padding: 2rem;
+  }
+
+  .benefit-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #FDFDFD;
+    margin: 0 0 1rem 0;
+  }
+
+  .benefit-card p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #FDFDFD;
+    margin: 0;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    margin-bottom: 4rem;
+  }
+
+  .faq-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+    margin: 0 0 2rem 0;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .faq-item {
+    background-color: #FDFDFD;
+    border: 2.5px solid #1a1a1a;
+    padding: 2rem;
+  }
+
+  .faq-item h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 1rem 0;
+  }
+
+  .faq-item p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .subscription-container {
+      padding: 0 3rem;
+    }
+
+    .plan-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .plan-divider {
+      height: 2.5px;
+      width: 100%;
+    }
+
+    .benefits-section {
+      grid-template-columns: 1fr;
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .subscription-hero {
+      padding: 6rem 0 4rem;
+    }
+
+    .subscription-container {
+      padding: 0 1rem;
+    }
+
+    .subscription-heading h1 {
+      font-size: clamp(80px, 20vw, 120px);
+    }
+
+    .plan-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .plan-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .plan-name {
+      font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    .price {
+      font-size: clamp(3rem, 12vw, 5rem);
+    }
+
+    .subscribe-button {
+      width: 100%;
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 1.25rem;
+    }
+
+    .faq-heading {
+      font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .benefit-card,
+    .faq-item {
+      padding: 1.5rem;
+    }
+  }
+</style>
