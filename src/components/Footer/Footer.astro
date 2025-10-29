@@ -360,7 +360,86 @@
     font-size: 2.25rem;
   }
 
-  /* Responsive */
+  /* Responsive - Gradual Shrinking */
+  @media (max-width: 1440px) {
+    .footer-container {
+      padding: 0 3rem;
+    }
+
+    .footer-heading {
+      font-size: clamp(90px, 14vw, 180px);
+    }
+
+    .footer-grid {
+      gap: 3rem;
+    }
+
+    .logo-text {
+      font-size: 2.25rem;
+      letter-spacing: 0.45rem;
+    }
+
+    .logo-subtitle {
+      font-size: 1.35rem;
+      letter-spacing: 0.45rem;
+    }
+
+    .column-heading {
+      font-size: 1.15rem;
+    }
+
+    .day {
+      font-size: 0.95rem;
+    }
+
+    .time,
+    .contact-info p {
+      font-size: 1.15rem;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .footer-container {
+      padding: 0 2.5rem;
+    }
+
+    .footer-heading {
+      font-size: clamp(80px, 12vw, 160px);
+    }
+
+    .footer-grid {
+      gap: 2.5rem;
+    }
+
+    .footer-column:not(:last-child)::after {
+      right: -1.25rem;
+    }
+
+    .logo-text {
+      font-size: 2rem;
+      letter-spacing: 0.4rem;
+    }
+
+    .logo-subtitle {
+      font-size: 1.25rem;
+      letter-spacing: 0.4rem;
+    }
+
+    .column-heading {
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .day {
+      font-size: 0.9rem;
+    }
+
+    .time,
+    .contact-info p {
+      font-size: 1.1rem;
+    }
+  }
+
   @media (max-width: 1024px) {
     .footer-grid {
       grid-template-columns: 1fr;
@@ -369,6 +448,16 @@
 
     .footer-column:not(:last-child)::after {
       display: none;
+    }
+
+    .logo-text {
+      font-size: 2.25rem;
+      letter-spacing: 0.3rem;
+    }
+
+    .logo-subtitle {
+      font-size: 1.35rem;
+      letter-spacing: 0.3rem;
     }
   }
 
