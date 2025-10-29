@@ -51,8 +51,9 @@
   <div class="mobile-menu-content">
     <!-- CTA Buttons -->
     <div class="mobile-menu-buttons">
-      <a href="/book" class="mobile-menu-button">BOOK NOW &gt;</a>
       <a href="tel:+1234567890" class="mobile-menu-button">CALL US &gt;</a>
+      <a href="/book" class="mobile-menu-button">BOOK NOW &gt;</a>
+      
     </div>
 
     <!-- Social Icons -->
@@ -103,7 +104,7 @@
     transform: translateX(-50%);
     width: 100%;
     max-width: 1600px;
-    height: 3px;
+    height: 2.5px;
     background-color: #1a1a1a;
   }
 
@@ -119,7 +120,7 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 1px solid #1a1a1a;
+    border: 2.5px solid #1a1a1a;
     background-color: #1a1a1a;
     color: #FDFDFD;
     transition: all 0.3s ease;
@@ -136,6 +137,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    text-transform: uppercase;
   }
 
   .logo a {
@@ -167,7 +169,7 @@
     letter-spacing: 0.25em;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 3px solid #1a1a1a;
+    border: 2.5px solid #1a1a1a;
     color: #1a1a1a;
     background-color: #FDFDFD;
   }
@@ -191,7 +193,7 @@
   .mobile-menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 6px;
+    gap: 10px;
     background: transparent;
     border: none;
     padding: 0;
@@ -200,14 +202,14 @@
 
   .mobile-menu-toggle span {
     display: block;
-    width: 30px;
+    width: 35px;
     height: 3px;
     background-color: #1a1a1a;
     transition: all 0.3s ease;
   }
 
   .mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(10px, 10px);
   }
 
   .mobile-menu-toggle.active span:nth-child(2) {
@@ -215,7 +217,7 @@
   }
 
   .mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(9px, -9px);
   }
 
   /* Mobile Menu Overlay */
@@ -271,7 +273,7 @@
     letter-spacing: 0.25em;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 3px solid #1a1a1a;
+    border: 2.5px solid #1a1a1a;
     color: #1a1a1a;
     background-color: #FDFDFD;
     text-align: center;
@@ -294,7 +296,7 @@
     justify-content: center;
     width: 50px;
     height: 50px;
-    border: 1px solid #1a1a1a;
+    border: 2.5px solid #1a1a1a;
     background-color: #1a1a1a;
     color: #FDFDFD;
     transition: all 0.3s ease;
@@ -309,8 +311,12 @@
   /* Responsive */
   @media (max-width: 768px) {
     .top-navigation {
-      padding: 1rem 1.5rem;
-      justify-content: center;
+      padding: 1.5rem 1rem;
+      justify-content: space-between;
+    }
+
+    .top-navigation::after {
+      width: 90%;
     }
 
     .social-icons {
@@ -325,17 +331,20 @@
       position: static;
       transform: none;
       text-align: center;
+      flex: 1;
+
     }
 
     .logo a {
-      font-size: 2rem;
-      letter-spacing: 0.5rem;
+      font-size: 1.5rem;
+      letter-spacing: 0.3rem;
     }
 
     .mobile-menu-toggle {
       display: flex;
-      position: absolute;
-      right: 1.5rem;
+      position: relative;
+      right: 0;
+      flex-shrink: 0;
     }
   }
 </style>

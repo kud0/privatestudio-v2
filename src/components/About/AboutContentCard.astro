@@ -22,11 +22,11 @@ const { heading, text } = Astro.props;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     padding: 3rem 0;
-    border-top: 3px solid #1a1a1a;
+    border-top: 2.5px solid #1a1a1a;
   }
 
   .about-content-card:last-child {
-    border-bottom: 3px solid #1a1a1a;
+    border-bottom: 2.5px solid #1a1a1a;
   }
 
   .card-left {
@@ -35,9 +35,9 @@ const { heading, text } = Astro.props;
   }
 
   .card-heading {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(2rem, 3vw, 3.5rem);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.1;
     letter-spacing: 0.05em;
     color: #1a1a1a;
@@ -51,11 +51,11 @@ const { heading, text } = Astro.props;
   }
 
   .card-text {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 1.6;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     color: #1a1a1a;
     margin: 0;
   }
@@ -70,10 +70,11 @@ const { heading, text } = Astro.props;
 
     .card-heading {
       font-size: clamp(1.5rem, 5vw, 2rem);
+      text-align: center;
     }
 
     .card-text {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
   }
 </style>
