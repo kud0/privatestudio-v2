@@ -28,7 +28,7 @@ const { name, photo, bookingUrl = "#booking" } = Astro.props;
 
   .card-content {
     display: flex;
-    border: 2.5px solid #1a1a1a;
+    border: 2.5px solid #222222;
     overflow: hidden;
     background-color: transparent;
   }
@@ -36,33 +36,32 @@ const { name, photo, bookingUrl = "#booking" } = Astro.props;
   /* Book Label - Sticks out on top-right */
   .book-label {
     position: absolute;
-    top: -15px;
-    right: 30px;
+    top: -62px;
+    right: 0px;
     z-index: 10;
     display: inline-block;
-    padding: 0.5rem 2rem;
+    padding: 1rem 1rem;
     background-color: #FDFDFD;
-    color: #1a1a1a;
+    color: #222222;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 2.5px solid #1a1a1a;
+    border: 2.5px solid #222222;
   }
 
   .book-label:hover {
-    background-color: #f5f5f5;
-    transform: translateY(-2px);
+    background-color: #e8e8e8;
   }
 
   /* Left side - Photo */
   .member-photo {
-    flex: 0 0 60%;
-    aspect-ratio: 3/4;
+    flex: 0 0 50%;
+    aspect-ratio: 5/6;
     overflow: hidden;
-    background-color: #1a1a1a;
+    
   }
 
   .member-photo img {
@@ -74,20 +73,20 @@ const { name, photo, bookingUrl = "#booking" } = Astro.props;
 
   /* Right side - Name */
   .member-info {
-    flex: 0 0 40%;
+    flex: 0 0 35%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+   
   }
 
   .member-name {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(2rem, 3vw, 3.5rem);
+    font-size: clamp(1.75rem, 2.5vw, 2.75rem);
     font-weight: 700;
     letter-spacing: 0.2em;
-    color: #1a1a1a;
+    color: #222222;
     text-align: center;
   }
 
@@ -101,7 +100,7 @@ const { name, photo, bookingUrl = "#booking" } = Astro.props;
 
     .card-content {
       flex-direction: column;
-      border: 2.5px solid #1a1a1a;
+      border: 2.5px solid #222222;
       width: 100%;
     }
 
@@ -130,7 +129,7 @@ const { name, photo, bookingUrl = "#booking" } = Astro.props;
       top: -45px;
       font-size: 1.5rem;
       padding: 0.75rem 1rem;
-      border: 2.5px solid #1a1a1a;
+      border: 2.5px solid #222222;
       background-color: #FDFDFD;
     }
   }

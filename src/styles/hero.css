@@ -6,10 +6,10 @@
 /* Global Hero Variables */
 :root {
   --hero-dark-bg: #2c2c2c;
-  --hero-darker-bg: #1a1a1a;
+  --hero-darker-bg: #222222;
   --hero-text-white: #ffffff;
   --hero-accent-cream: #f5f5dc;
-  --hero-button-text: #1a1a1a;
+  --hero-button-text: #222222;
 }
 
 /* Performance Optimization */

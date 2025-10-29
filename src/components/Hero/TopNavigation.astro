@@ -29,7 +29,9 @@
 
   <!-- Center: Logo -->
   <div class="logo">
-    <a href="/">PrivateStudio</a>
+    <a href="/">
+      <img src="/images/logo-privatestudio.png" alt="PrivateStudio" class="logo-image" />
+    </a>
   </div>
 
   <!-- Right: CTA Buttons -->
@@ -102,10 +104,10 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 95%;
     max-width: 1600px;
     height: 2.5px;
-    background-color: #1a1a1a;
+    background-color: #222222;
   }
 
   /* Social Icons */
@@ -121,8 +123,8 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 2.5px solid #1a1a1a;
-    background-color: #1a1a1a;
+    border: 2.5px solid #222222;
+    background-color: #222222;
     color: #FDFDFD;
     transition: all 0.3s ease;
   }
@@ -141,14 +143,16 @@
   }
 
   .logo a {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 400;
-    letter-spacing: 0.5rem;
-    color: #1a1a1a;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     transition: opacity 0.3s ease;
-    white-space: nowrap;
+  }
+
+  .logo-image {
+    height: 50px;
+    width: auto;
+    display: block;
   }
 
   .logo a:hover {
@@ -164,7 +168,7 @@
   }
 
   .cta-button {
-    padding: 0.6rem 2.5rem;
+    padding: 0.6rem 2rem;
     border-radius: 50px;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.25rem;
@@ -172,25 +176,24 @@
     letter-spacing: 0.25em;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 2.5px solid #1a1a1a;
-    color: #1a1a1a;
+    border: 2.5px solid #222222;
+    color: #222222;
     background-color: #FDFDFD;
     white-space: nowrap;
   }
 
   .cta-button.cta-primary {
     background-color: #FDFDFD;
-    color: #1a1a1a;
-    border-color: #1a1a1a;
+    color: #222222;
+    border-color: #222222;
   }
 
   .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #e8e8e8;
   }
 
   .cta-button.cta-primary:hover {
-    background-color: #e8e8cc;
+    background-color: #e8e8e8;
   }
 
   /* Mobile Menu Toggle */
@@ -208,7 +211,7 @@
     display: block;
     width: 35px;
     height: 3px;
-    background-color: #1a1a1a;
+    background-color: #222222;
     transition: all 0.3s ease;
   }
 
@@ -277,16 +280,15 @@
     letter-spacing: 0.25em;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 2.5px solid #1a1a1a;
-    color: #1a1a1a;
+    border: 2.5px solid #222222;
+    color: #222222;
     background-color: #FDFDFD;
     text-align: center;
     min-width: 250px;
   }
 
   .mobile-menu-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #e8e8e8;
   }
 
   .mobile-menu-social {
@@ -300,8 +302,8 @@
     justify-content: center;
     width: 50px;
     height: 50px;
-    border: 2.5px solid #1a1a1a;
-    background-color: #1a1a1a;
+    border: 2.5px solid #222222;
+    background-color: #222222;
     color: #FDFDFD;
     transition: all 0.3s ease;
   }
@@ -411,11 +413,8 @@
       grid-column: auto;
       text-align: center;
       flex: 1;
-    }
-
-    .logo a {
-      font-size: 1.5rem;
-      letter-spacing: 0.3rem;
+      display: flex;
+      justify-content: center;
     }
 
     .mobile-menu-toggle {
