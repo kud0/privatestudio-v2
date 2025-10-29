@@ -87,6 +87,10 @@
     background-color: #5a5a5a;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: none;
   }
 
   .text-line-wrapper {
@@ -95,7 +99,8 @@
     overflow: hidden;
     white-space: nowrap;
     background-color: #5a5a5a;
-    padding: 0rem 0;
+    padding: 1rem 0;
+    border: none;
   }
 
   .text-line {
@@ -124,17 +129,21 @@
 
   /* Responsive */
   @media (max-width: 768px) {
+    .scrolling-text-section {
+      gap: 0rem;
+    }
+
+    .text-line-wrapper {
+      padding: 1rem 0;
+    }
+
     .text-content {
       font-size: 1.5rem;
-      padding: 0 2rem;
+      padding: 0 1rem;
     }
 
     .separator {
       font-size: 1.5rem;
-    }
-
-    .text-line {
-      padding: 1rem 0;
     }
   }
 </style>
@@ -150,7 +159,7 @@
     const delta = scrollY - lastScrollY;
 
     // First line moves left (negative direction)
-    leftX -= delta * 0.5;
+    leftX -= delta * 0.75;
 
     // Second line moves right (positive direction)
     rightX += delta * 0.5;

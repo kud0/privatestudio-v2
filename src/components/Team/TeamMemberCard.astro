@@ -92,28 +92,38 @@ const { name, photo, bookingUrl = "#booking" } = Astro.props;
   }
 
   @media (max-width: 768px) {
+    .team-member-card {
+      width: 100%;
+      max-width: 100%;
+    }
+
     .card-content {
       flex-direction: column;
+      border: 4px solid #1a1a1a;
     }
 
     .member-photo {
       flex: 0 0 auto;
-      aspect-ratio: 4/3;
+      aspect-ratio: 4/5;
+      width: 100%;
     }
 
     .member-info {
       flex: 0 0 auto;
-      padding: 1.5rem;
+      padding: 3rem 2rem;
+      min-height: 150px;
     }
 
     .member-name {
-      font-size: 2rem;
+      font-size: 3.5rem;
     }
 
     .book-label {
-      right: 20px;
-      font-size: 1rem;
-      padding: 0.4rem 1.5rem;
+      right: 40px;
+      top: -25px;
+      font-size: 1.5rem;
+      padding: 0.75rem 2.5rem;
+      border: 4px solid #1a1a1a;
     }
   }
 </style>

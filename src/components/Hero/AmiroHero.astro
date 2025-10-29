@@ -3,6 +3,12 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
 ---
 
 <section class="amiro-hero">
+  <!-- Mobile CTA Buttons -->
+  <div class="mobile-cta-buttons">
+    <a href="/book" class="cta-button">BOOK NOW &gt;</a>
+    <a href="tel:+1234567890" class="cta-button">CALL US &gt;</a>
+  </div>
+
   <!-- Hero Content Container -->
   <div class="hero-content-wrapper">
     <!-- Main Hero Content -->
@@ -79,6 +85,12 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
     overflow-y: visible;
     background-color: #5a5a5a;
     padding-bottom: 20rem;
+  }
+
+  @media (max-width: 768px) {
+    .amiro-hero {
+      padding-top: 80px;
+    }
   }
 
   /* Hero Content Wrapper */
@@ -275,30 +287,50 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
     }
   }
 
+  /* Mobile CTA Buttons */
+  .mobile-cta-buttons {
+    display: none;
+  }
+
   @media (max-width: 768px) {
+    .mobile-cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+      width: 100%;
+      padding: 1.5rem 1.5rem 2rem;
+    }
+
+    .mobile-cta-buttons .cta-button {
+      padding: 0.6rem 2.5rem;
+      border-radius: 50px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 3px solid #1a1a1a;
+      color: #1a1a1a;
+      background-color: #FDFDFD;
+    }
+
     .hero-content {
       padding: 0 1.5rem;
     }
 
     .hero-text-large {
-      padding-top: 6rem;
+      padding-top: 2rem;
       margin-bottom: 2rem;
     }
 
     .text-line {
-      font-size: clamp(80px, 20vw, 120px);
+      font-size: clamp(240px, 50vw, 400px);
     }
 
     .hero-cta-right {
-      position: static;
-      transform: none;
-      margin: 2rem 0;
-      text-align: center;
-    }
-
-    .cta-box {
-      padding: 1.25rem 1.5rem;
-      font-size: 0.875rem;
+      display: none;
     }
 
     .hero-images {
@@ -306,26 +338,36 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
       gap: 2rem;
       margin-bottom: 8rem;
       align-items: center;
+      width: 100%;
     }
 
     .hero-image-container {
       width: 100%;
-      height: 45vh;
-      min-height: 300px;
-      max-height: 450px;
+      aspect-ratio: 9/16;
+      height: auto;
+      min-height: unset;
+      max-height: unset;
     }
 
     .hero-image-left-wrapper {
       margin-top: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .hero-image-left,
     .hero-image-right {
+      display: block;
       margin-top: 0;
     }
 
-    .hero-image-text p {
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
+    .hero-image-left {
+      margin-top: 0;
+    }
+
+    .hero-image-text {
+      display: none;
     }
 
     .corner-elements {
@@ -342,7 +384,7 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
 
   @media (max-width: 480px) {
     .text-line {
-      font-size: clamp(60px, 18vw, 90px);
+      font-size: clamp(150px, 40vw, 350px);
     }
 
     .hero-images {
