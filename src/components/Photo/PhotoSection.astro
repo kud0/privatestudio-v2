@@ -6,8 +6,8 @@ interface Props {
 }
 
 const {
-  imageUrl = "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1600&h=900&fit=crop",
-  alt = "PrivateStudio Barbershop Interior"
+  imageUrl = "/images/privatestudio-crew.jpg",
+  alt = "PrivateStudio Barbershop Team"
 } = Astro.props;
 ---
 
@@ -37,6 +37,7 @@ const {
     height: auto;
     display: block;
     object-fit: cover;
+    filter: saturate(0.7);
   }
 
   @media (max-width: 768px) {
