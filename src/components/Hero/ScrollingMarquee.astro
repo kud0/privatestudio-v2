@@ -33,15 +33,19 @@
 
 <style>
   .marquee-container {
-    position: fixed;
-    top: 70vh;
-    left: 0;
-    right: 0;
-    background-color: #FDFDFD;
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-color: #fdfdfd;
     overflow: hidden;
     white-space: nowrap;
     padding: 1rem 0;
     z-index: 50;
+    margin-top: -2rem; /* Pull up slightly to overlap or sit tight */
+    margin-bottom: 2rem;
   }
 
   .marquee-content {
@@ -51,7 +55,7 @@
 
   .marquee-text {
     display: inline-block;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.15em;
@@ -88,13 +92,15 @@
   let lastScrollY = 0;
   let currentX = 0;
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
     const delta = scrollY - lastScrollY;
 
     currentX -= delta * 0.5; // Move based on scroll delta
 
-    const marqueeContent = document.querySelector('#hero-marquee .marquee-content') as HTMLElement;
+    const marqueeContent = document.querySelector(
+      "#hero-marquee .marquee-content",
+    ) as HTMLElement;
     if (marqueeContent) {
       marqueeContent.style.transform = `translateX(${currentX}px)`;
     }

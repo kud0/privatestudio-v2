@@ -1,11 +1,16 @@
 ---
-import ScrollingMarquee from './ScrollingMarquee.astro';
+import ScrollingMarquee from "./ScrollingMarquee.astro";
 ---
 
 <section class="amiro-hero">
   <!-- Mobile CTA Buttons -->
   <div class="mobile-cta-buttons">
-    <a href="https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona#ba_s=sh_1" target="_blank" rel="noopener" class="cta-button">BOOK NOW &gt;</a>
+    <a
+      href="https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona#ba_s=sh_1"
+      target="_blank"
+      rel="noopener"
+      class="cta-button">BOOK NOW &gt;</a
+    >
     <a href="/subscription" class="cta-button">PLAN &gt;</a>
   </div>
 
@@ -20,11 +25,17 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
           <span class="text-line">now</span>
         </h1>
       </div>
+      <ScrollingMarquee />
 
       <!-- Right Side CTA Text -->
       <div class="hero-cta-right">
-        <a href="https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona#ba_s=sh_1" target="_blank" rel="noopener" class="cta-box">
-          SCHEDULE YOUR<br />HAIRCUT TODAY &gt;
+        <a
+          href="https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona#ba_s=sh_1"
+          target="_blank"
+          rel="noopener"
+          class="cta-box"
+        >
+          RESERVA TU<br />CORTE HOY &gt;
         </a>
       </div>
 
@@ -39,13 +50,13 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
             />
           </div>
           <div class="hero-image-text">
-            <p>STYLE IS<br />PERSONAL<br />EXCELLENCE</p>
+            <p>EL ESTILO ES<br />EXCELENCIA</p>
           </div>
         </div>
         <div class="hero-image-container hero-image-right">
           <img
-            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&h=800&fit=crop"
-            alt="Professional barber cutting client's hair"
+            src="/images/inside-front.jpg"
+            alt="Interior of Private Studio Barbershop"
             loading="lazy"
           />
         </div>
@@ -56,7 +67,14 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
     <div class="corner-elements">
       <!-- Bottom Left: Accessibility Icon -->
       <button class="accessibility-icon" aria-label="Accessibility Options">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
           <circle cx="12" cy="12" r="10"></circle>
           <circle cx="12" cy="8" r="1.5"></circle>
           <path d="M12 10v4"></path>
@@ -73,7 +91,6 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
   </div>
 
   <!-- Bottom Scrolling Marquee -->
-  <ScrollingMarquee />
 </section>
 
 <style>
@@ -137,8 +154,8 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
     display: inline-block;
     padding: 0;
     border: none;
-    color: #FDFDFD;
-    font-family: 'Space Grotesk', sans-serif;
+    color: #fdfdfd;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 0.15em;
@@ -155,7 +172,7 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
 
   .text-line {
     display: block;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: clamp(140px, 18vw, 250px);
     font-weight: 700;
     color: #222222;
@@ -201,11 +218,11 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
   /* Image Text Below Left Image */
   .hero-image-text {
     margin-top: 2rem;
-    color: #FDFDFD;
+    color: #fdfdfd;
   }
 
   .hero-image-text p {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: clamp(2rem, 4vw, 4rem);
     font-weight: 700;
     line-height: 1;
@@ -244,7 +261,7 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border: 2.5px solid rgba(255, 255, 255, 0.3);
-    color: #FDFDFD;
+    color: #fdfdfd;
     cursor: pointer;
     transition: all 0.3s ease;
     pointer-events: auto;
@@ -306,7 +323,7 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
     .mobile-cta-buttons .cta-button {
       padding: 0.6rem 2.5rem;
       border-radius: 50px;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: "Space Grotesk", sans-serif;
       font-size: 1.125rem;
       font-weight: 600;
       letter-spacing: 0.1em;
@@ -314,7 +331,7 @@ import ScrollingMarquee from './ScrollingMarquee.astro';
       transition: all 0.3s ease;
       border: 2.5px solid #222222;
       color: #222222;
-      background-color: #FDFDFD;
+      background-color: #fdfdfd;
     }
 
     .hero-content {

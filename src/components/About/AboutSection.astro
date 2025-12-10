@@ -1,23 +1,19 @@
 ---
-import AboutContentCard from './AboutContentCard.astro';
+import AboutContentCard from "./AboutContentCard.astro";
 
 const aboutCards = [
   {
-    heading: "A DREAM BORN FROM FRIENDSHIP",
-    text: "At AMIRO Barbershop, it all starts with friendship. Over 20 years ago, two kids, Andrea Amighetti and Luca Rossi, sat next to each other in a classroom, unknowingly sharing a dream. What began as a simple bond grew into something more a lifelong passion for the art of barbering. After years of living in different countries and following our separate paths, we reunited to bring that dream to ."
+    heading: "EL FUNDADOR: DE PERÚ A BARCELONA",
+    text: "Mi viaje comenzó en Perú, pero mi sueño siempre tuvo un destino global. Desde pequeño supe que mi pasión por la barbería me llevaría lejos. Ese deseo de crecer y perfeccionar mi arte me trajo a Barcelona, una ciudad que respira creatividad. Aquí, en Private Studio, fusiono la calidez de mis raíces con la vanguardia europea, creando no solo cortes, sino experiencias que cuentan una historia de superación y estilo.",
   },
   {
-    heading: "WHEN YOU FEEL GOOD, YOU DON'T LOOK GOOD!",
-    text: "AMIRO Barbershop represents the boldness and creativity that only years of friendship can bring. Whether you're preparing for a special event or just want to turn heads walking through the city, our cuts are designed to give you confidence and style."
+    heading: "PASIÓN POR EL DETALLE",
+    text: "En nuestro equipo, cada tijeretazo tiene un propósito. No se trata solo de cortar cabello, sino de esculpir una imagen que proyecte tu mejor versión. Entendemos que los detalles marcan la diferencia entre un buen corte y uno excepcional. Nos tomamos el tiempo necesario para entender tus facciones y tu estilo de vida, asegurando un resultado impecable que hable por sí mismo.",
   },
   {
-    heading: "BUILT ON FRIENDSHIP, CRAFTED WITH CARE.",
-    text: "We believe every haircut should be as unique as the person wearing it. That's why every trim, shave, and style we deliver is crafted with precision and tailored to your individual taste. When you visit *AMIRO*, you're not just getting a haircut, you're stepping into a place where passion and dedication come together in every detail."
+    heading: "MÁS QUE UNA BARBERÍA",
+    text: "Private Studio es un espacio donde la tradición se encuentra con la modernidad. Creemos en el poder de la comunidad y en hacer que cada cliente se sienta como en casa. Aquí no eres un número más; eres parte de nuestra familia. El ambiente, la música y la conversación son tan importantes como el servicio, creando una atmósfera única donde puedes relajarte y ser tú mismo.",
   },
-  {
-    heading: "A PLACE WHERE FRIENDSHIP, CRAFTSMANSHIP, AND STYLE MEET",
-    text: "Conveniently located at Ankerstrasse 124, 8004 Zürich, AMIRO Barbershop is your destination for a fresh look that blends tradition with contemporary trends. Whether you're after a timeless classic or a bold, modern style, we've got you covered. Come by, experience our story, and leave with more than just a great haircut. At AMIRO Barbershop, you'll find a place where friendship, craftsmanship, and style meet."
-  }
 ];
 ---
 
@@ -29,12 +25,11 @@ const aboutCards = [
 
   <!-- Content cards -->
   <div class="about-content-wrapper">
-    {aboutCards.map((card) => (
-      <AboutContentCard
-        heading={card.heading}
-        text={card.text}
-      />
-    ))}
+    {
+      aboutCards.map((card) => (
+        <AboutContentCard heading={card.heading} text={card.text} />
+      ))
+    }
   </div>
 </section>
 
@@ -58,7 +53,7 @@ const aboutCards = [
   }
 
   .about-heading {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: clamp(120px, 20vw, 280px);
     font-weight: 700;
     line-height: 0.8;

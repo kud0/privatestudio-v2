@@ -1,26 +1,24 @@
 ---
-import TeamMemberCard from './TeamMemberCard.astro';
+import TeamMemberCard from "./TeamMemberCard.astro";
 
 const teamMembers = [
   {
     name: "RENI",
     photo: "/images/barber-reni.jpg",
-    bookingUrl: "https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona/staffer/133063#ba_s=vl_1",
+    bookingUrl:
+      "https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona/staffer/133063#ba_s=vl_1",
   },
   {
     name: "FELIPE",
     photo: "/images/barber-felipe.jpg",
-    bookingUrl: "https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona/staffer/184011#ba_s=vl_1",
-  },
-  {
-    name: "JOSE",
-    photo: "/images/barber-jose.jpg",
-    bookingUrl: "https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona/staffer/220870#ba_s=vl_1",
+    bookingUrl:
+      "https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona/staffer/184011#ba_s=vl_1",
   },
   {
     name: "DANIEL",
     photo: "/images/barber-daniel.jpg",
-    bookingUrl: "https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona/staffer/211065#ba_s=vl_1",
+    bookingUrl:
+      "https://booksy.com/es-es/90283_private-studio_barberia_48863_barcelona/staffer/211065#ba_s=vl_1",
   },
 ];
 ---
@@ -34,20 +32,24 @@ const teamMembers = [
       </div>
 
       <div class="team-grid">
-        {teamMembers.map((member) => (
-          <TeamMemberCard
-            name={member.name}
-            photo={member.photo}
-            bookingUrl={member.bookingUrl}
-          />
-        ))}
+        {
+          teamMembers.map((member) => (
+            <div class="member-wrapper">
+              <TeamMemberCard
+                name={member.name}
+                photo={member.photo}
+                bookingUrl={member.bookingUrl}
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
 
     <!-- Right Column: Full-height divider with statement -->
     <div class="team-right-column">
       <div class="statement-divider">
-        <p>WE<br />DON'T<br />DO<br />NORMAL</p>
+        <p>FUERA<br />DE<br />LO<br />COMÚN</p>
       </div>
     </div>
   </div>
@@ -82,7 +84,7 @@ const teamMembers = [
 
   /* Giant "team" heading */
   .team-heading h2 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: clamp(120px, 20vw, 280px);
     font-weight: 700;
     line-height: 0.8;
@@ -91,11 +93,19 @@ const teamMembers = [
     margin: 0 0 2rem 0;
   }
 
-  /* Team Grid */
+  /* Team Grid - Flexbox for centering odd items */
   .team-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
+  }
+
+  .member-wrapper {
+    flex: 1 1 500px; /* Force wrap if < 500px space usually <1100px viewport */
+    max-width: 800px;
+    width: 100%;
   }
 
   /* Right Column - Full Height Divider */
@@ -115,40 +125,22 @@ const teamMembers = [
   }
 
   .statement-divider p {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 700;
     line-height: 0.9;
     letter-spacing: 0.1em;
-    color: #FDFDFD;
+    color: #fdfdfd;
     margin: 0;
     text-align: center;
   }
 
   /* Responsive */
-  @media (max-width: 1024px) {
-    .team-container {
-      gap: 3rem;
-    }
-
-    .team-grid {
-      gap: 3rem 2rem;
-    }
-
-    .team-right-column {
-      padding-left: 2rem;
-    }
-
-    .statement-divider p {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-    }
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1280px) {
     .team-container {
       grid-template-columns: 1fr;
       gap: 3rem;
-      padding: 0;
+      padding: 0 2rem;
     }
 
     .team-left-column {
@@ -156,20 +148,26 @@ const teamMembers = [
       flex-direction: column;
       align-items: center;
       width: 100%;
-      padding: 0 1rem;
+      gap: 5rem;
     }
 
     .team-right-column {
       display: none;
     }
+  }
+
+  @media (max-width: 768px) {
+    .team-container {
+      padding: 0 1rem;
+    }
 
     .team-grid {
-      grid-template-columns: 1fr;
-      gap: 4rem;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      gap: 3rem;
+    }
+
+    .team-heading h2 {
+      font-size: clamp(80px, 15vw, 150px);
+      text-align: center;
     }
   }
 </style>
